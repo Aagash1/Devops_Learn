@@ -98,3 +98,8 @@ jobs:
           context: .
           push: true
           tags: aagash11/github_actions_docker:latest
+      
+      - name: Verify Docker Image
+        run: |
+          docker pull aagash11/github_actions_docker:latest
+          echo "Docker image pulled successfully"
