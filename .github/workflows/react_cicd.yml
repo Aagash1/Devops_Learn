@@ -99,9 +99,16 @@ jobs:
           push: true
           tags: aagash11/github_actions_docker:latest
           platforms: linux/amd64,linux/arm64
-          
       
       - name: Verify Docker Image
         run: |
           docker pull aagash11/github_actions_docker:latest
           echo "Docker image pulled successfully"
+
+  deploy:
+    needs: deploy-to-dockerhub
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Server
+        run: echo ${{ github.ref }}
