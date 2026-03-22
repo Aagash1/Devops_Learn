@@ -5,7 +5,7 @@ describe("React Build Artifact Tests", () => {
   test("index.html should exist in build folder", () => {
     const filePath = path.join(__dirname, "../dist/index.html");
 
-    expect(fs.existsSync(filePath)).toBe(false);
+    expect(fs.existsSync(filePath)).toBe(true);
   });
 
   test("index.html should contain root div", () => {
