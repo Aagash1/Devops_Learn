@@ -91,4 +91,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: aagash11/react_app:latest
+          tags: aagash11/github_actions_docker:latest
