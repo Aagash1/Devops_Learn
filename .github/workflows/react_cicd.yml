@@ -98,6 +98,8 @@ jobs:
           context: .
           push: true
           tags: aagash11/github_actions_docker:latest
+          platforms: linux/amd64,linux/arm64
+          
       
       - name: Verify Docker Image
         run: |
