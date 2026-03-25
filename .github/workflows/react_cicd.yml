@@ -109,14 +109,12 @@ jobs:
     needs: deploy-to-dockerhub
     runs-on: ubuntu-latest
 
-    env:
-      API_URL: ${{ github.ref == 'refs/heads/Github_Actions_Hands-on' && 'https://api.dev.com' || 'https://api.prod.com' }}
-      DB_NAME: ${{ github.ref == 'refs/heads/Github_Actions_Hands-on' && 'dev_db' || 'prod_db' }}
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
 
-    steps:
+    steps: 
       - name: Print Deployment Info
         run: |
           echo "Deploying application..."
           echo "Branch: ${{ github.ref }}"
-          echo "API_URL=${{ env.API_URL }}"
-          echo "DB_NAME=${{ env.DB_NAME }}"
+          echo "API_URL=${{ secrets.API_URL }}"
+          echo "DB_NAME=${{ secrets.DB_NAME }}"
