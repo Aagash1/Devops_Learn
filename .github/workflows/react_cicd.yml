@@ -116,5 +116,5 @@ jobs:
         run: |
           echo "Deploying application..."
           echo "Branch: ${{ github.ref }}"
-          echo "API_URL=${{ secrets.API_URL }}"
-          echo "DB_NAME=${{ secrets.DB_NAME }}"
+          echo "API_URL=${{ vars.API_URL }}"
+          echo "DB_NAME=${{ vars.DB_NAME }}"
